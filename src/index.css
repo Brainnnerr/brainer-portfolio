@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* 1. FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Archivo:ital,wght@0,900;1,900&display=swap');
+
+/* 2. GLOBAL STYLES */
+:root {
+  font-family: 'Inter', sans-serif;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- SCROLL SNAPPING LOGIC --- */
+/* Only enable snapping for Desktop/Laptops (1024px and up) */
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a0204; /* Dark Maroon */
+  color: #ffffff;
+  /* Standard overflow for mobile, snap container for desktop */
+  overflow-x: hidden; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. PROFESSIONAL TEXT CLASSES */
+@layer utilities {
+  .header-font {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+}
+
+/* 4. CUSTOM MAROON SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0204;
+}
+::-webkit-scrollbar-thumb {
+  background: #800000;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a00000;
+}
