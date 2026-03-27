@@ -118,7 +118,7 @@ function App() {
                 DOWNLOAD CV
               </a>
               <a 
-                href="https://github.com/geposonleonard" 
+                href="https://github.com/Brainnnerr" 
                 target="_blank" 
                 rel="noreferrer" 
                 className={`px-8 py-4 border text-xs font-bold tracking-widest rounded-full transition-all duration-300 ${isDark ? 'border-white/20 text-white hover:bg-white/5' : 'border-[#1a0204]/20 text-[#1a0204] hover:bg-[#1a0204]/5'}`}
