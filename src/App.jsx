@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Added Router imports
 import { motion, AnimatePresence } from 'framer-motion'; 
 import { Typewriter } from 'react-simple-typewriter';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
+
+// Components
+import ScrollToTop from './components/ScrollToTop';
 import Iridescence from './components/Iridescence';
 import AboutMe from './components/AboutMe';
 import TechnicalPortfolio from './components/TechnicalPortfolio';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import ProjectDetail from './components/ProjectDetail'; // New Component
+
+// Assets
 import myPhoto from './assets/removed-bg.png'; 
 
 const sectionVariants = {
@@ -31,13 +38,12 @@ function App() {
     { name: 'Contact', href: '#contact' },
   ];
 
-  return (
-    <div className={`transition-colors duration-700 font-sans selection:bg-[#800000] selection:text-white ${isDark ? 'bg-[#1a0204] text-white' : 'bg-[#fdfcf0] text-[#1a0204]'}`}>
-      
+  // The Main Portfolio Layout
+  const MainPortfolio = () => (
+    <>
       {/* 1. TOP NAV */}
       <nav className="absolute top-0 w-full z-50 bg-transparent">
         <div className="max-w-7xl mx-auto p-8 flex justify-between items-center">
-          
           <button 
             onClick={toggleTheme}
             className={`p-3 rounded-full border transition-all duration-300 shadow-xl active:rotate-90 ${isDark ? 'bg-white/5 border-white/10 text-[#800000]' : 'bg-[#800000]/5 border-[#800000]/20 text-[#800000]'}`}
@@ -86,7 +92,6 @@ function App() {
           className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10 py-20 lg:py-0"
           initial="hidden" whileInView="visible" viewport={{ once: false }} variants={sectionVariants}
         >
-          {/* Hero Image Side */}
           <div className="order-2 md:order-1 flex justify-center items-center">
             <div className={`absolute w-64 h-64 md:w-[500px] md:h-[500px] rounded-full blur-[80px] transition-colors duration-700 ${isDark ? 'bg-white/5' : 'bg-[#800000]/10'}`} />
             <motion.img 
@@ -98,7 +103,6 @@ function App() {
             />
           </div>
 
-          {/* Hero Text Side */}
           <div className="order-1 md:order-2 text-center md:text-left">
             <h1 className={`header-font text-5xl md:text-[90px] leading-none transition-colors duration-700 ${isDark ? 'text-[#f8ebeb]' : 'text-[#1a0204]'}`}>
               LEONARD<br /> GEPOSON
@@ -106,11 +110,11 @@ function App() {
             <div className="mt-6 flex items-center justify-center md:justify-start gap-4">
               <div className="hidden md:block h-[2px] w-12 bg-[#800000]"></div>
               <p className={`text-lg md:text-2xl font-bold tracking-[0.2em] uppercase ${isDark ? 'text-[#f07c7c]' : 'text-[#800000]'}`}>
-                <Typewriter words={['Computer Engineer', 'Software Developer', 'UI/UX Enthusiast', 'Brainer']} loop={true} cursor cursorStyle='|' typeSpeed={70} deleteSpeed={50} delaySpeed={2000} />
+                <Typewriter words={['Computer Engineering Student', 'Software Developer', 'UI/UX Enthusiast', 'Brainer']} loop={true} cursor cursorStyle='|' typeSpeed={70} deleteSpeed={50} delaySpeed={2000} />
               </p>
             </div>
-            <p className={`mt-6 max-w-md mx-auto md:mx-0 font-light border-l-4 border-[#800000] pl-6 italic transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-[#1a0204]/70'}`}>
-              "Learning without thought is labor lost; thought without learning is perilous."
+            <p className={`mt-6 max-w-md mx-auto md:mx-0 font-light border-[#800000] border-l-0 pl-0 md:border-l-4 md:pl-6 italic transition-all duration-700 ${isDark ? 'text-gray-300' : 'text-[#1a0204]/70'}`}>
+              "Learning without thought is labor lost; thought without learning is perilous." - Confucius
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -130,13 +134,28 @@ function App() {
         </motion.div>
       </section>
 
-      {/* --- MODULAR SECTIONS --- */}
       <AboutMe isDark={isDark} />
       <TechnicalPortfolio isDark={isDark} />
       <Skills isDark={isDark} />
       <Contact isDark={isDark} />
+    </>
+  );
 
-    </div>
+  return (
+    <Router>
+      <div className={`transition-colors duration-700 font-sans selection:bg-[#800000] selection:text-white ${isDark ? 'bg-[#1a0204] text-white' : 'bg-[#f4d9d0] text-[#1a0204]'}`}>
+        
+        <Routes>
+          {/* Main Portfolio Route */}
+          <Route path="/" element={<MainPortfolio />} />
+
+          {/* Project Details Route */}
+          <Route path="/project/:slug" element={<ProjectDetail isDark={isDark} />} />
+        </Routes>
+
+        <ScrollToTop isDark={isDark} />
+      </div>
+    </Router>
   );
 }
 

@@ -38,7 +38,7 @@ const CardSwap = ({
   delay = 5000,
   pauseOnHover = false,
   onCardClick,
-  onSwap, // ADDED: Prop to notify parent of the new active card
+  onSwap, 
   skewAmount = 6,
   easing = 'elastic',
   children
@@ -83,7 +83,6 @@ const CardSwap = ({
 
       const [front, ...rest] = order.current;
       
-      // SYNC LOGIC: Tell parent the index of the card now moving to the front
       if (onSwap) {
         onSwap(rest[0]); 
       }
