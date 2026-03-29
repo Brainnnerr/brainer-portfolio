@@ -5,13 +5,27 @@ import CardSwap, { Card } from './CardSwap';
 import TechLines from './TechLines';
 
 import requestlyImg from '../assets/REQUESTLY.png';
-import boardeaseImg from '../assets/BOARDEASE.png'; 
-import memoraImg from '../assets/MEMORA.png'; 
-import electionImg from '../assets/ELECTION.png'; 
 import req1Img from '../assets/req1.png';
 import req2Img from '../assets/req2.png';
 import req3Img from '../assets/req3.png';
 
+import printproImg from '../assets/PRINTPRO.png';
+
+import boardeaseImg from '../assets/BOARDEASE.png'; 
+
+import memoraImg from '../assets/MEMORA.png'; 
+import memora1Img from '../assets/memora1.png';
+import memora2Img from '../assets/memora2.png';
+
+import electionImg from '../assets/ELECTION.png'; 
+
+import swdsmsImg from '../assets/SWDSMS.png';
+
+import valentineImg from '../assets/VALENTINES.png';
+
+import eCompendiumImg from '../assets/E-COMPENDIUM.png';
+
+import ePalengkeImg from '../assets/E-PALENGKE.png';
 
 export const projects = [
   {
@@ -52,7 +66,7 @@ export const projects = [
     features: ["Custom Flashcards", "Spaced-Repetition Algorithm", "Category Folders", "Gamified Progress", "Cloud Sync"],
     tech: ["React Native", "Expo Go", "Appwrite", "Framer Motion"],
     image: memoraImg,
-    gallery: [memoraImg, requestlyImg], 
+    gallery: [memoraImg, memora1Img, memora2Img], 
     github: "https://github.com/geposonleonard/memora-app",
     webLink: "https://memora.netlify.app"
   },
@@ -68,7 +82,7 @@ export const projects = [
     image: electionImg,
     gallery: [electionImg, boardeaseImg], 
     github: "https://github.com/geposonleonard/icpep-election",
-    webLink: "https://icpep-vote.web.app"
+    webLink: "https://icpep-election.netlify.app/"
   },
   {
     id: 5,
@@ -79,11 +93,67 @@ export const projects = [
     fullDescription: "PrintPro was designed to simplify the printing process for students, providing a seamless experience from order placement to delivery.",
     features: ["Easy Order Placement", "Real-time Tracking", "Secure Payment Processing", "Multiple Print Options"],
     tech: ["React.js", "Node.js", "MongoDB", "Stripe API"],
-    image: electionImg,
-    gallery: [electionImg, boardeaseImg], 
+    image: printproImg,
+    gallery: [printproImg, boardeaseImg], 
     github: "https://github.com/geposonleonard/icpep-election",
-    webLink: "https://icpep-vote.web.app"
-  }
+    webLink: "https://printproo.netlify.app/"
+  },
+  {
+  id: 6, // Adjusted to follow PrintPro
+  slug: "swdsms",
+  title: "SWDSMS",
+  subtitle: "Student Management System",
+  description: "Developed a comprehensive management system for the Social Welfare and Development department to streamline student record-keeping. Integrated features for data organization, student profiling, and automated report generation.",
+  fullDescription: "SWDSMS (Social Welfare and Development Student Management System) was engineered to replace manual filing systems, ensuring that student data is secure, easily searchable, and efficiently managed by department administrators.",
+  features: ["Student Profiling", "Automated Report Generation", "Secure Data Storage", "Advanced Search & Filtering"],
+  tech: ["React.js", "Supabase", "Tailwind CSS", "Netlify"],
+  image: swdsmsImg, // Ensure you define/import this variable
+  gallery: [swdsmsImg, requestlyImg], 
+  github: "https://github.com/geposonleonard/swdsms",
+  webLink: "https://swdsmss.netlify.app/"
+},
+{
+  id: 7,
+  slug: "valentine-gift",
+  title: "Valentine Gift",
+  subtitle: "Interactive Digital Experience",
+  description: "Designed and deployed a viral interactive web experience allowing users to customize digital gifts with curated music and visuals. Successfully reached over 200 users within the first 48 hours of launch.",
+  fullDescription: "A personalized gifting platform where users can select unique floral illustrations and background music to craft a digital moment. The project focused on high interactivity, aesthetic UI design, and rapid deployment.",
+  features: ["Custom Flower Selection", "Music Integration (Spotify-style)", "Responsive Design", "Instant Social Sharing"],
+  tech: ["React.js", "Framer Motion", "Tailwind CSS", "Netlify"],
+  image: valentineImg,
+  gallery: [valentineImg], 
+  github: "https://github.com/geposonleonard/valentine-gift",
+  webLink: "https://happy-valentinesssz.netlify.app/" // Update with your actual URL
+},
+{
+  id: 8,
+  slug: "e-compendium",
+  title: "E-COMPENDIUM",
+  subtitle: "Digital Thesis Submission System",
+  description: "Developed as my debut project, this system digitizes the thesis submission process for ESSU. It features a dual-portal login for Admins and Students to upload and manage academic research papers efficiently.",
+  fullDescription: "E-COMPENDIUM was the foundational project that sparked my interest in software development. It serves as a centralized digital repository where students can submit their thesis work and administrators can manage approvals and archival, replacing traditional paper-based submissions.",
+  features: ["Dual-Role Authentication", "Digital Document Upload", "Thesis Archiving", "Searchable Database"],
+  tech: ["HTML5", "CSS3", "JavaScript", "Firebase (Firestore & Auth)"],
+  image: eCompendiumImg,
+  gallery: [eCompendiumImg], 
+  github: "https://github.com/geposonleonard/e-compendium",
+  webLink: "https://e-compendiumm.netlify.app"
+},
+{
+  id: 9,
+  slug: "e-palengke",
+  title: "E-PALENGKE",
+  subtitle: "Dukwag Agrikultura Marketplace Design",
+  description: "A specialized UI/UX design project for Borongan City's Dukwag Agrikultura program. Designed an intuitive digital marketplace to help local farmers sell their fresh produce directly to the community.",
+  fullDescription: "E-PALENGKE is a Figma-based prototype designed to modernize agricultural commerce in Borongan. The project focuses on creating a seamless 'farm-to-table' digital experience, empowering local farmers with a platform to showcase and sell their products while providing citizens with easy access to local goods.",
+  features: ["Local Farmer Portals", "Direct-to-Consumer Marketplace", "Localized UI/UX Design", "Fresh Produce Categorization"],
+  tech: ["Figma", "UI/UX Design", "Product Prototyping", "User Flow Mapping"],
+  image: ePalengkeImg,
+  gallery: [ePalengkeImg], 
+  github: null,
+  webLink: "https://www.figma.com/design/A7u2nY3TLZfhw5MwTl32pL/ePalengke?node-id=0-1&t=cxXOPwuSuiAQ845O-1"
+}
 ];
 
 const TechnicalPortfolio = ({ isDark }) => {
